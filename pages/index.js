@@ -10,11 +10,8 @@ import {
   Markdown,
   Paragraph
 } from 'grommet'
-import withStyles from 'react-jss'
-
-const ReactJson = dynamic(import('react-json-view'), { ssr: false });
+const ReactJson = dynamic(import('react-json-view'), { ssr: false })
 import 'isomorphic-fetch'
-const styles = {}
 const theme = {
   global: {
     colors: {
@@ -49,7 +46,6 @@ class App extends React.Component {
   }
   async componentDidMount() {
     await this.getQuote()
-    //console.log(this.state.quote)
   }
   render() {
     return (
@@ -65,12 +61,19 @@ class App extends React.Component {
             alignContent="center"
             background="whitesmoke"
           >
-            <Heading margin="small">Office Quotes as a Service</Heading>
-            <Heading level={2} margin="small">
+            <Heading margin="small" textAlign="center">
+              Office Quotes as a Service
+            </Heading>
+            <Heading level={2} textAlign="center" margin="medium">
               OQaaS
             </Heading>
 
-            <Markdown>{quote}</Markdown>
+            <Heading level={5} margin="small" textAlign="center">
+              {this.state.quote.quote}
+            </Heading>
+            <Heading level={5} margin="small">
+              - {this.state.quote.name}
+            </Heading>
 
             <Button
               label="Learn more"
@@ -100,19 +103,20 @@ class App extends React.Component {
             </Box>
           </Box>
           <Box
-            pad="medium"
+            pad="small"
             align="center"
             alignContent="center"
             animation="zoomIn"
             basis="full"
+            background="whitesmoke"
           >
-            <Box pad="medium" basis="1/2" align="center">
+            <Box pad="medium" basis="2/3" align="center">
               <Markdown>{example}</Markdown>
             </Box>
           </Box>
           <Box
             direction="row-responsive"
-            pad="medium"
+            pad="small"
             align="center"
             alignContent="center"
             animation="zoomIn"
@@ -130,10 +134,6 @@ class App extends React.Component {
     )
   }
 }
-
-const quote = `
-> "Bears. Beets. Battlestar Galactica." - Jim Halpert
-`
 const p1 = `
 ### Super Duper Fast
 **OQaaS** is made with the goal of high stability and near-zero downtime.  
@@ -150,15 +150,24 @@ You can even get a random quote from a specific character!
 *Just not from Toby*.
 `
 const example = `
-### Check this out:
-Its really easy to get started. No fancy-shmacy API keys.  
-Wanna see? I bet you do.  
+### Check this out!
+Its really easy to get started. No fancy-shmacy API keys.
+Just send a \`GET\` request to one of [*many domains*](docs#doamins).  
+**Look at this example in javascript:**  
 `
 const request = `
 \`\`\`
-curl --request GET \
-  --url https://oq.now.sh/api/r
+var data = null
+var xhr = new XMLHttpRequest()
+xhr.addEventListener('readystatechange', function() {
+  if (this.readyState === this.DONE) {
+    console.log(this.responseText)
+  }
+})
+xhr.open('GET', 'https://oq.now.sh/api/r')
+xhr.send(data)
+
 \`\`\`
 `
 
-export default withStyles(styles)(App)
+export default App
