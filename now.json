@@ -16,6 +16,7 @@
     "jim",
     "dwight",
     "toby",
+    "fuckToby",
     "micheal",
     "michealScott",
     "DwightSchrute",
@@ -24,12 +25,9 @@
   "version": 2,
   "builds": [
     { "src": "next.config.js", "use": "@now/next" },
-    { "src": "api/index.js", "use": "@now/node-server" }
+    { "src": "api/api.js", "use": "@now/node-server" }
   ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/index.js" },
-    { "src": "/api/(.*)", "dest": "/api/index.js" }
-  ],
+  "routes": [{ "src": "/api/(.*)", "dest": "api/api.js" }],
   "github": {
     "silent": true
   }
