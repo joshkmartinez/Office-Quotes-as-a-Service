@@ -1,8 +1,19 @@
 import React from 'react'
 import Head from 'next/head'
-import { Grommet, Box, Heading, Button, Text, Markdown } from 'grommet'
+import dynamic from 'next/dynamic'
+import {
+  Grommet,
+  Box,
+  Heading,
+  Button,
+  Text,
+  Markdown,
+  Paragraph
+} from 'grommet'
 import withStyles from 'react-jss'
 
+const ReactJson = dynamic(import('react-json-view'), { ssr: false });
+import 'isomorphic-fetch'
 const styles = {}
 const theme = {
   global: {
@@ -15,7 +26,31 @@ const theme = {
   }
 }
 class App extends React.Component {
-  componentDidMount() {}
+  constructor(props) {
+    super(props)
+    this.state = { quote: '' }
+  }
+  getQuote = () => {
+    var data = null
+    var xhr = new XMLHttpRequest()
+    let setResponse = r => {
+      this.setState({ quote: JSON.parse(r) })
+    }
+    xhr.addEventListener('readystatechange', function() {
+      if (this.readyState === this.DONE) {
+        setResponse(this.responseText)
+      }
+    })
+
+    xhr.open('GET', 'https://oq.now.sh/api/r')
+    xhr.setRequestHeader('accept', 'application/json')
+
+    xhr.send(data)
+  }
+  async componentDidMount() {
+    await this.getQuote()
+    //console.log(this.state.quote)
+  }
   render() {
     return (
       <React.Fragment>
@@ -47,7 +82,7 @@ class App extends React.Component {
             />
           </Box>
           <Box
-            direction="row"
+            direction="row-responsive"
             pad="medium"
             align="center"
             alignContent="center"
@@ -75,6 +110,21 @@ class App extends React.Component {
               <Markdown>{example}</Markdown>
             </Box>
           </Box>
+          <Box
+            direction="row-responsive"
+            pad="medium"
+            align="center"
+            alignContent="center"
+            animation="zoomIn"
+            basis="full"
+          >
+            <Box pad="medium" basis="1/2" align="center">
+              <Markdown>{request}</Markdown>
+            </Box>
+            <Box pad="medium" basis="1/2" align="center">
+              <ReactJson src={this.state.quote} />
+            </Box>
+          </Box>
         </Grommet>
       </React.Fragment>
     )
@@ -94,7 +144,6 @@ const p2 = `
 Over 100 quotes from the office are in **OQaaS**'s database!  
 Have a quote that you think should be included? Feel free to submit a request to add one!
 `
-
 const p3 = `
 ### Get quotes by character
 You can even get a random quote from a specific character!  
@@ -103,9 +152,13 @@ You can even get a random quote from a specific character!
 const example = `
 ### Check this out:
 Its really easy to get started. No fancy-shmacy API keys.  
-Wanna see?  
+Wanna see? I bet you do.  
+`
+const request = `
 \`\`\`
-GET oq.now.sh/api
+curl --request GET \
+  --url https://oq.now.sh/api/r
 \`\`\`
 `
+
 export default withStyles(styles)(App)

@@ -1,10 +1,18 @@
 var express = require('express')
 var app = express()
+var cors = require('cors')
 var quotes = require('./quotes')
 //sort by person
 
 const api = express.Router()
-
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  )
+  next()
+})
 api.get(['/quote', '/q', '/r', '/random'], (req, res) => {
   var quote = quotes[Math.floor(Math.random() * quotes.length)]
   //character max param
