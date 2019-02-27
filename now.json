@@ -17,10 +17,16 @@
     "dwight",
     "toby",
     "micheal",
-    "michealScott"
+    "michealScott",
+    "DwightSchrute",
+    "schruteFarms"
   ],
   "version": 2,
-  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
+  "builds": [
+    { "src": "next.config.js", "use": "@now/next" },
+    { "src": "api/index.js", "use": "@now/node-server" }
+  ],
+  "routes": [{ "src": "/(.*)", "dest": "/index.js" }],
   "github": {
     "silent": true
   }
