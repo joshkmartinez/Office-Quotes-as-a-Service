@@ -26,7 +26,10 @@
     { "src": "next.config.js", "use": "@now/next" },
     { "src": "api/index.js", "use": "@now/node-server" }
   ],
-  "routes": [{ "src": "/(.*)", "dest": "/index.js" }],
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.js" },
+    { "src": "/api/(.*)", "dest": "/api/index.js" }
+  ],
   "github": {
     "silent": true
   }
