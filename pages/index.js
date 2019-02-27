@@ -129,6 +129,15 @@ class App extends React.Component {
               <ReactJson src={this.state.quote} />
             </Box>
           </Box>
+          <Box
+            align="center"
+            alignContent="center"
+            animation="zoomIn"
+            basis="1"
+            background="whitesmoke"
+          >
+            <Markdown>{toDocs}</Markdown>
+          </Box>
         </Grommet>
       </React.Fragment>
     )
@@ -169,5 +178,7 @@ xhr.send(data)
 
 \`\`\`
 `
-
+const toDocs = `
+## [Go to the docs](/docs)
+`
 export default App
