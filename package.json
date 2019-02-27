@@ -1,0 +1,68 @@
+{
+  "name": "OfficeQuotesAsAService",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "deploy": "now",
+    "postdeploy": "now alias"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "grommet": "^2.4.0",
+    "grommet-icons": "^4.2.0",
+    "hoist-non-react-statics": "^3.3.0",
+    "next": "^8.0.3",
+    "react": "^16.8.3",
+    "react-dimensions": "^1.3.1",
+    "react-dom": "^16.8.3",
+    "react-jss": "^8.6.1",
+    "styled-components": "^4.1.3",
+    "webpack": "^4.29.3"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "eslint": "^5.13.0",
+    "eslint-plugin-react": "^7.12.4",
+    "now": "^13.1.3"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "rules": {
+      "react/react-in-jsx-scope": "off",
+      "semi": [
+        "error",
+        "never"
+      ],
+      "quotes": [
+        "error",
+        "single"
+      ]
+    },
+    "parser": "babel-eslint",
+    "env": {
+      "node": true,
+      "browser": true,
+      "es6": true
+    }
+  }
+}

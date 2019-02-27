@@ -1,0 +1,20 @@
+{
+  "name": "Office Quotes As a Service",
+  "alias": [
+    "theOffice",
+    "oqaas",
+    "oq",
+    "officeQuotes",
+    "dunderMifflin",
+    "jim",
+    "dwight",
+    "toby",
+    "micheal",
+    "michealScott"
+  ],
+  "version": 2,
+  "builds": [{ "src": "next.config.js", "use": "@now/next" }],
+  "github": {
+    "silent": true
+  }
+}
