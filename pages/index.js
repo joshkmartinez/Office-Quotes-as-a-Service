@@ -18,7 +18,7 @@ const theme = {
       brand: '#123456'
     },
     font: {
-      family: 'Roboto'
+      family: 'Helvetica'
     }
   }
 }
@@ -74,15 +74,31 @@ class App extends React.Component {
             <Heading level={5} margin="small">
               - {this.state.quote.name}
             </Heading>
-
-            <Button
-              label="Learn more"
-              color="brand"
-              margin="large"
-              hoverIndicator
-              primary
-              onClick={() => window.scrollTo(0, window.innerHeight)}
-            />
+            <Box
+              direction="row-responsive"
+              pad="medium"
+              align="center"
+              alignContent="center"
+              animation="zoomIn"
+              basis="full"
+            >
+              <Button
+                label="Learn more"
+                color="brand"
+                margin="medium"
+                hoverIndicator
+                primary
+                onClick={() => window.scrollTo(0, window.innerHeight)}
+              />
+              <Button
+                label="Documentation"
+                color="brand"
+                margin="medium"
+                hoverIndicator
+                primary
+                href="/docs"
+              />
+            </Box>
           </Box>
           <Box
             direction="row-responsive"

@@ -8,7 +8,8 @@ import {
   Button,
   Text,
   Markdown,
-  Paragraph
+  Paragraph,
+  Anchor
 } from 'grommet'
 const ReactJson = dynamic(import('react-json-view'), { ssr: false })
 import 'isomorphic-fetch'
@@ -18,7 +19,7 @@ const theme = {
       brand: '#123456'
     },
     font: {
-      family: 'Roboto'
+      family: 'Helvetica'
     }
   }
 }
@@ -82,7 +83,13 @@ class Docs extends React.Component {
             animation="zoomIn"
             basis="full"
           >
-            <Box pad="medium" basis="1">
+            {' '}
+            <Box pad="medium" basis="full" align="center" alignContent="center">
+              <Anchor href="#endpoints" primary label="Endpoints" />
+              <Markdown>{endpoints}</Markdown>
+            </Box>
+            <Box pad="medium" basis="full" align="center" alignContent="center">
+              <Anchor href="#domains" primary label="Aliases" />
               <Markdown>{domains}</Markdown>
             </Box>
           </Box>
@@ -91,30 +98,42 @@ class Docs extends React.Component {
     )
   }
 }
+const endpoints = `
+- **/random**
+  - Aliases ~ /r, /quote, /q
+  - This endpoint returns a random quote from The Office. Plain and simple.
+- **/all**
+  - Aliases ~ /list, /a, /allQuotes
+  - This returns all of the quotes within the database.
+- **/ping**
+  - Aliases ~ /pong
+  - Returns \`"pong"\`.
+`
 const domains = `
 ## Here are the domains that this service can be accessed from:
-theOffice.now.sh
-oqaas.now.sh
-oq.now.sh
-OfficeQuotesAsAService.now.sh
-OfficeQuotesAsAServiceAPI.now.sh
-officeAPI.now.sh
-theOfficeAPI.now.sh
-dunderMifflinAPI.now.sh
-michealScottPaperCompany.now.sh
-sabre.now.sh
-officeQuotes.now.sh
-dunderMifflin.now.sh
-jim.now.sh
-dwight.now.sh
-toby.now.sh
-oAPI.now.sh
-oqAPI.now.sh
-officeQuoteAPI.now.sh
-micheal.now.sh
-michealScott.now.sh
-DwightSchrute.now.sh
-schruteFarm.now.sh
-schruteFarms.now.sh
+theOffice.now.sh  
+oqaas.now.sh  
+officeQuotesAPI.now.sh  
+oq.now.sh  
+OfficeQuotesAsAService.now.sh  
+OfficeQuotesAsAServiceAPI.now.sh  
+officeAPI.now.sh  
+theOfficeAPI.now.sh  
+dunderMifflinAPI.now.sh  
+michealScottPaperCompany.now.sh  
+sabre.now.sh  
+officeQuotes.now.sh  
+dunderMifflin.now.sh  
+jim.now.sh  
+dwight.now.sh  
+toby.now.sh  
+oAPI.now.sh  
+oqAPI.now.sh  
+officeQuoteAPI.now.sh  
+micheal.now.sh  
+michealScott.now.sh  
+DwightSchrute.now.sh  
+schruteFarm.now.sh  
+schruteFarms.now.sh  
 `
 export default Docs
