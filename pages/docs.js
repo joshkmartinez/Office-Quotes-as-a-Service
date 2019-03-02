@@ -74,6 +74,24 @@ class Docs extends React.Component {
             <Heading level={5} margin="small">
               - {this.state.quote.name}
             </Heading>
+            <Box
+              direction="row-responsive"
+              pad="medium"
+              align="center"
+              alignContent="center"
+              animation="zoomIn"
+              basis="full"
+            >
+              
+              <Button
+                label="Github"
+                color="brand"
+                margin="medium"
+                hoverIndicator
+                primary
+                href="https://github.com/joshkmartinez/Office-Quotes-as-a-Service"
+              />
+            </Box>
           </Box>
           <Box
             direction="row-responsive"
@@ -93,24 +111,33 @@ class Docs extends React.Component {
               <Markdown>{domains}</Markdown>
             </Box>
           </Box>
+          
         </Grommet>
       </React.Fragment>
     )
   }
 }
 const endpoints = `
-- **/random**
-  - Aliases ~ /r, /quote, /q
-  - This endpoint returns a random quote from The Office. Plain and simple.
-- **/all**
-  - Aliases ~ /list, /a, /allQuotes
-  - This returns all of the quotes within the database.
-- **/ping**
-  - Aliases ~ /pong
-  - Returns \`"pong"\`.
+The OQaaS API is located at \`/api\`. It can be accessed from any domain (eg. \`micheal.now.sh/api\`).  
+   
+**/random**  
+  - Aliases ~ /r, /quote, /q  
+  - This endpoint returns a random quote from The Office. Plain and simple. 
+     
+ **/all**  
+  - Aliases ~ /list, /a, /allQuotes  
+  - This returns all of the quotes within the database. 
+      
+**/num**  
+    - Aliases ~ /n, /number 
+    - Returns the number of quotes within the database.  
+      
+ **/ping**  
+  - Aliases ~ /pong  
+  - Returns \`pong\`  
 `
 const domains = `
-## Here are the domains that this service can be accessed from:
+**Here are the domains that this service can be accessed from:**  
 theOffice.now.sh  
 oqaas.now.sh  
 officeQuotesAPI.now.sh  

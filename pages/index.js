@@ -113,6 +113,14 @@ class App extends React.Component {
                 primary
                 href="/docs"
               />
+              <Button
+                label="Github"
+                color="brand"
+                margin="medium"
+                hoverIndicator
+                primary
+                href="https://github.com/joshkmartinez/Office-Quotes-as-a-Service"
+              />
             </Box>
           </Box>
           <Box
@@ -193,9 +201,8 @@ Have a quote that you think should be included? Feel free to submit a [pull requ
 }
 
 const p3 = `
-### Get quotes by character
-You can even get a random quote from a specific character!  
-*Just not from Toby*.
+### Who said that?
+In addition to a random quote, you also get the name of the character who said it!
 `
 const example = `
 ### Check this out!
