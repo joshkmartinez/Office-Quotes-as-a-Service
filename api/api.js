@@ -1,6 +1,6 @@
 var express = require('express')
 var app = express()
-var cors = require('cors')
+//var cors = require('cors')
 var quotes = require('./quotes')
 //sort by person
 
@@ -21,13 +21,16 @@ api.get(['/quote', '/q', '/r', '/random'], (req, res) => {
 api.get(['/all', '/list', '/a', '/allQuotes'], (req, res) => {
   res.json(quotes)
 })
-api.get('/hello', function(req, res) {
+api.get(['/num', 'number', '/n'], (req, res) => {
+  res.json(Object.keys(quotes).length)
+})
+api.get('/hello', (req, res) => {
   res.send('hi')
 })
-api.get(['/ping', '/pong'], function(req, res) {
+api.get(['/ping', '/pong'], (req, res) => {
   res.send('pong')
 })
-api.get('/', function(req, res) {
+api.get('/', (req, res) => {
   res.send('This is the Office Quotes as a Service (OQaaS) API')
 })
 app.use('/api', api)

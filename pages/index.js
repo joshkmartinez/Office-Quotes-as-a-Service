@@ -25,7 +25,22 @@ const theme = {
 class App extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { quote: '' }
+    this.state = { quote: '', num: 0 }
+  }
+  getNumQuote = () => {
+    var data = null
+    var xhr = new XMLHttpRequest()
+    let setResponse = r => {
+      num = r
+    }
+    xhr.addEventListener('readystatechange', function() {
+      if (this.readyState === this.DONE) {
+        setResponse(this.responseText)
+      }
+    })
+
+    xhr.open('GET', 'https://oq.now.sh/api/n')
+    xhr.send(data)
   }
   getQuote = () => {
     var data = null
@@ -40,12 +55,11 @@ class App extends React.Component {
     })
 
     xhr.open('GET', 'https://oq.now.sh/api/r')
-    xhr.setRequestHeader('accept', 'application/json')
-
     xhr.send(data)
   }
-  async componentDidMount() {
-    await this.getQuote()
+  componentDidMount() {
+    this.getQuote()
+    this.getNumQuote()
   }
   render() {
     return (
@@ -159,15 +173,20 @@ class App extends React.Component {
     )
   }
 }
+let num = 0
 const p1 = `
 ### Super Duper Fast
 **OQaaS** is made with the goal of high stability and near-zero downtime.  
 You can rely on us to deliver your Office quotes quickly reliably.
 `
-const p2 = `
-### 100+ Quotes
-Over 100 quotes from the office are in **OQaaS**'s database!  
-Have a quote that you think should be included? Feel free to submit a request to add one!
+const p2 =
+  `
+###  Tons of quotes
+There are currently ` +
+  num +
+  `
+ quotes from The Office are in **OQaaS**'s database!  
+Have a quote that you think should be included? Feel free to submit a [pull request](https://github.com/joshkmartinez/Office-Quotes-as-a-Service) to add one!
 `
 const p3 = `
 ### Get quotes by character
