@@ -183,9 +183,9 @@ let p2 = n => {
   let a =
     `
 ###  Tons of quotes
-There are currently ` +
+There are currently **` +
     n +
-    `
+    `**
 quotes from The Office are in **OQaaS**'s database!  
 Have a quote that you think should be included? Feel free to submit a [pull request](https://github.com/joshkmartinez/Office-Quotes-as-a-Service) to add one!
 `
