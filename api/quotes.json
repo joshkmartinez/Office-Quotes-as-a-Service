@@ -117,6 +117,10 @@
   },
   {
     "name": "Michael Scott",
+    "quote": "I'll catch you on the flippity-flip. Bye!"
+  },
+  {
+    "name": "Michael Scott",
     "quote": "It's not that children make me uncomfortable, it's just that, why be a dad when you can be a fun uncle? I've never heard of anyone rebelling against their fun uncle."
   },
   {
@@ -126,5 +130,59 @@
   {
     "name": "Michael Scott",
     "quote": "Close your eyes. Picture a convict. What's he wearing? Nothing special, baseball cap on backwards, baggy pants... he says something ordinary like... 'yo, thats shizzle.' Okay. Now slowly open your eyes again. Who are you picturing? A black man? Wrong. That was a white woman. Surprised? Well, shame on you."
+  },
+  {
+    "name": "Michael Scott",
+    "quote": "You may look around and see two groups here: white collar, blue collar. But I don't see it that way, and you know why not? Because I am collar-blind.",
+    "Season": "2",
+    "Episode": "15"
+  },
+  {
+    "name": "Michael Scott",
+    "quote": "Fool me once, strike one. Fool me twice, strike three.",
+    "Season": "3",
+    "Episode": "13"
+  },
+  {
+    "name": "Michael Scott",
+    "quote": "Sometimes you have to take a break from being the kind of boss that's always trying to teach people things. Sometimes you just have to be the boss of dancing.",
+    "Season": "2",
+    "Episode": "11"
+  },
+  {
+    "name": "Michael Scott",
+    "quote": "Make friends first, make sales second, make love third. In no particular order.",
+    "Season": "6",
+    "Episode": "20"
+  },
+  {
+    "name": "Michael Scott",
+    "quote": "People will never be replaced by machines. In the end, life and business are about human connections. And computers are about trying to murder you in a lake. And to me the choice is easy.",
+    "Season": "4",
+    "Episode": "3"
+  },
+  {
+    "name": "Kevin Malone",
+    "quote": "When me president, they see. They see.",
+    "Season": "8",
+    "Episode": "2"
+  },
+  {
+    "name": "Kevin Malone",
+    "quote": "Yes, me do.",
+    "Season": "8",
+    "Episode": "2"
+  },
+  {
+    "name": "Kevin Malone",
+    "quote": "Body strong. Sleep big last night.",
+    "Season": "8",
+    "Episode": "2"
+  },
+  {
+    "name": "Kevin Malone",
+    "quote": "Why waste time say lot word when few word do trick?",
+    "Season": "8",
+    "Episode": "2"
   }
 ]
