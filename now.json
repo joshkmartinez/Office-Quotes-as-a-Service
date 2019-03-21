@@ -15,16 +15,12 @@
     "officeQuotes",
     "dunderMifflin",
     "jim",
-    "dwight",
     "toby",
     "oAPI",
     "oqAPI",
     "officeQuoteAPI",
     "micheal",
-    "michealScott",
-    "DwightSchrute",
-    "schruteFarm",
-    "schruteFarms"
+    "michealScott"
   ],
   "version": 2,
   "builds": [
