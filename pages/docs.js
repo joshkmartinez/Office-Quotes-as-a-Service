@@ -159,8 +159,5 @@ oqAPI.now.sh
 officeQuoteAPI.now.sh  
 micheal.now.sh  
 michealScott.now.sh  
-DwightSchrute.now.sh  
-schruteFarm.now.sh  
-schruteFarms.now.sh  
 `
 export default Docs
