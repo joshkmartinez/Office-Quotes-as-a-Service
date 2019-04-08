@@ -82,7 +82,6 @@ class Docs extends React.Component {
               animation="zoomIn"
               basis="full"
             >
-              
               <Button
                 label="Github"
                 color="brand"
@@ -111,14 +110,14 @@ class Docs extends React.Component {
               <Markdown>{domains}</Markdown>
             </Box>
           </Box>
-          
         </Grommet>
       </React.Fragment>
     )
   }
 }
 const endpoints = `
-The OQaaS API is located at \`/api\`. It can be accessed from any domain (eg. \`micheal.now.sh/api\`).  
+The OQaaS API is located at \`/api\`. It can be accessed from any domain (as seen to the right)  
+e.g. \`oq.now.sh/api\`  
    
 **/random**  
   - Aliases ~ /r, /quote, /q  
@@ -129,7 +128,7 @@ The OQaaS API is located at \`/api\`. It can be accessed from any domain (eg. \`
   - This returns all of the quotes within the database. 
       
 **/num**  
-    - Aliases ~ /n, /number 
+    - Aliases ~ /n, /number  
     - Returns the number of quotes within the database.  
       
  **/ping**  
