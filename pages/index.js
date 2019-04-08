@@ -207,7 +207,7 @@ In addition to a random quote, you also get the name of the character who said i
 const example = `
 ### Check this out!
 Its really easy to get started. No fancy-shmacy API keys.
-Just send a \`GET\` request to one of [*many domains*](docs#doamins).  
+Just send a \`GET\` request to one of [*many domains*](docs#domains).  
 **Look at this example in javascript:**  
 `
 const request = `
