@@ -21,7 +21,7 @@
     "@zeit/next-css": "^1.0.1",
     "cors": "^2.8.5",
     "es6-promise": "^4.2.6",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "grommet": "^2.4.0",
     "grommet-icons": "^4.2.0",
     "hoist-non-react-statics": "^3.3.0",
